@@ -1,0 +1,56 @@
+<div class="contenedor" >
+  <h2>Lista de Productos</h2>
+
+  @if (productos().length === 0) {
+    <div class="empty-state">
+      No hay productos cargados
+    </div>
+  } @else {
+
+    <table class="tabla">
+      <thead>
+        <tr>
+          <th style="width: 5%;">Id</th>
+          <th>Título</th>
+          <th>Descripción</th>
+          <th style="width: 10%;">Precio</th>
+          <th style="width: 5%;">%</th>
+          <th style="width: 10%;">Pecio c/descuento</th>
+          <th class="col-acciones">Acciones</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        @for (producto of productos(); track producto.id) {
+          <tr>
+            <td>{{ producto.id }}</td>
+            <td>{{ producto.titulo| uppercase }}</td>
+            <td>{{ producto.descripcion}}</td>
+            <td>{{ producto.precio | currency:'$':'symbol':'1.2-2' }}</td>
+            <td>{{ producto.descuento }}%</td>
+            <td>{{ producto.precio | descuentoPipe:producto.descuento | currency:'$':'symbol':'1.2-2' }}</td>
+            <td>
+              <div class="acciones">
+              <button
+                  type="button"
+                  class="btn btn-info"
+                  [routerLink]="['/productos', producto.id]">
+                  Ver detalle
+                </button>
+            
+              <button
+                class="btn btn-danger"
+                type="button"
+                (click)="borrar(producto.id)">
+                Borrar
+              </button>
+            </div>
+            </td>
+          </tr>
+        }
+      </tbody>
+    </table>
+
+  }
+
+</div>

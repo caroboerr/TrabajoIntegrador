@@ -1,0 +1,22 @@
+<div class="contenedor">
+
+  <header class="page-header">
+    <h1>Administración de Usuarios</h1>
+  </header>
+
+  <section class="card">
+    <div class="toolbar">
+    <button
+      type="button"
+      class="btn btn-primary"
+      [routerLink]="['/usuarios/alta']">
+      ➕ Nuevo Usuario
+    </button>
+  </div>
+    <lista-usuarios 
+        [usuarios]="listaUsuarios"
+        (borrarUsuario)="borrar($event)">
+    </lista-usuarios>
+  </section>
+
+</div>

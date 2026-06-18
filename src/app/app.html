@@ -1,0 +1,27 @@
+<div class="layout">
+
+  <aside class="sidebar">
+    <div class="sidebar-header">
+      <h2>Mi App</h2>
+    </div>
+
+    <nav class="sidebar-menu">
+      <a routerLink="/" routerLinkActive="activo" [routerLinkActiveOptions]="{exact:true}">
+        🏠 Home
+      </a>
+
+      <a routerLink="/usuarios" routerLinkActive="activo">
+        👤 Usuarios
+      </a>
+
+      <a routerLink="/productos" routerLinkActive="activo">
+        📦 Productos
+      </a>
+    </nav>
+  </aside>
+
+  <main class="contenido">
+    <router-outlet></router-outlet>
+  </main>
+
+</div>

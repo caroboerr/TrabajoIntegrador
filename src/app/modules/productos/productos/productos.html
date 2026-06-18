@@ -1,0 +1,21 @@
+<div class="contenedor">
+  <header class="page-header">
+    <h1>Administración de Productos</h1>
+  </header>
+
+  <section class="card">
+    <div class="toolbar">
+    <button
+      type="button"
+      class="btn btn-primary"
+      [routerLink]="['/productos/alta']">
+      ➕ Nuevo Producto
+    </button>
+  </div>
+    <lista-productos 
+        [productos]="listaProductos"
+        (borrarProducto)="borrar($event)">
+    </lista-productos>
+  </section>
+
+</div>

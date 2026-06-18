@@ -1,0 +1,122 @@
+<div class="contenedor">
+
+  <header class="page-header">
+    <h1>Alta de Usuario</h1>
+  </header>
+
+  <section class="card">
+    <div class="toolbar">
+      <button
+        type="button"
+        class="btn btn-primary"
+        (click)="volver()">
+        ← Volver a la lista
+      </button> 
+  </div>
+
+<form
+  [formGroup]="formulario"
+  class="formulario"
+  (ngSubmit)="enviar()">
+
+<div class="campo">
+    <label>Username</label>
+    <input
+        formControlName="userId"
+        placeholder="Ingrese el nombre de usuario">
+
+      @if (formulario.get('userId')?.touched &&
+          formulario.get('userId')?.invalid) {
+
+        @if (formulario.get('userId')?.errors?.['required']) {
+          <small>El nombre de usuario es obligatorio</small>
+        }
+
+        @if (formulario.get('userId')?.errors?.['minlength']) {
+          <small>Mínimo 3 caracteres</small>
+        }
+
+        @if (formulario.get('userId')?.errors?.['maxlength']) {
+          <small>Máximo 20 caracteres</small>
+        }
+      }
+
+  </div>
+
+  <div class="campo">
+    <label>Nombre</label>
+    <input formControlName="nombre" placeholder="Ingrese el nombre"> 
+    @if (formulario.get('nombre')?.touched && formulario.get('nombre')?.invalid) { 
+      @if (formulario.get('nombre')?.errors?.['required']) 
+        { <small>El nombre es obligatorio</small> } 
+      @if (formulario.get('nombre')?.errors?.['minlength']) 
+        { <small>Mínimo 3 caracteres</small> } 
+      @if (formulario.get('nombre')?.errors?.['maxlength']) 
+        { <small>Máximo 50 caracteres</small> } }
+  </div>
+ 
+<div class="campo">
+  <input type="email" formControlName="email" placeholder="Ingrese el email"> 
+  @if (formulario.get('email')?.touched && formulario.get('email')?.invalid) { 
+    @if (formulario.get('email')?.errors?.['required']) 
+      { <small>El email es obligatorio</small> } 
+    @if (formulario.get('email')?.errors?.['email']) 
+      { <small>Ingrese un email válido</small> } }
+
+</div>
+<div class="campo">
+  <select formControlName="rol"> <option value="">Seleccione un rol</option> 
+    <option value="Administrador">Administrador</option> 
+    <option value="Supervisor">Supervisor</option> 
+    <option value="Usuario">Usuario</option> 
+  </select> 
+  @if (formulario.get('rol')?.touched && formulario.get('rol')?.errors?.['required']) 
+    { <small>El rol es obligatorio</small> }
+</div>
+
+<div class="campo">
+  <label>Estado</label>
+
+  <div class="switch-container">
+
+    <label class="switch">
+      <input
+        type="checkbox"
+        formControlName="activo">
+
+      <span class="slider"></span>
+    </label>
+
+    @if (formulario.get('activo')?.value) {
+      <span class="estado">Activo</span>
+    } @else {
+      <span class="estado">Inactivo</span>
+    }
+
+  </div>
+</div>
+
+
+
+
+  <div class="botones">
+    <button
+      class="btn btn-primary"
+      type="submit"
+      [disabled]="formulario.invalid">
+      Guardar
+    </button>
+
+    <button
+      class="btn btn-secondary"
+      type="button"
+      (click)="cancelar()">
+      Cancelar
+    </button>
+  </div>
+  
+</form>
+
+</section>
+
+</div>

@@ -1,0 +1,136 @@
+<div class="contenedor">
+
+  <header class="page-header">
+    <h1>Alta de Producto</h1>
+  </header>
+
+  <section class="card">
+    <div class="toolbar">
+      <button
+        type="button"
+        class="btn btn-primary"
+        (click)="volver()">
+        ← Volver a la lista
+      </button> 
+  </div>
+
+
+<form
+  [formGroup]="formulario"
+  class="formulario"
+  (ngSubmit)="enviar()">
+
+  <div class="campo">
+    <label>Título</label>
+
+    <input
+      formControlName="titulo"
+      placeholder="Ingrese el título">
+
+    @if (formulario.get('titulo')?.touched &&
+         formulario.get('titulo')?.invalid) {
+
+      @if (formulario.get('titulo')?.errors?.['required']) {
+        <small>El título es obligatorio</small>
+      }
+
+      @if (formulario.get('titulo')?.errors?.['minlength']) {
+        <small>El título debe tener al menos 5 caracteres</small>
+      }
+    }
+  </div>
+
+  <div class="campo">
+    <label>Descripción</label>
+
+    <textarea
+      formControlName="descripcion"
+      placeholder="Ingrese la descripción">
+    </textarea>
+
+    @if (formulario.get('descripcion')?.touched &&
+         formulario.get('descripcion')?.invalid) {
+
+      @if (formulario.get('descripcion')?.errors?.['required']) {
+        <small>La descripción es obligatoria</small>
+      }
+
+      @if (formulario.get('descripcion')?.errors?.['minlength']) {
+        <small>La descripción debe tener al menos 5 caracteres</small>
+      }
+    }
+  </div>
+
+  <div class="campo">
+    <label>Precio</label>
+
+    <input
+      type="number"
+      step="0.01"
+      formControlName="precio"
+      placeholder="Ingrese el precio">
+
+    @if (formulario.get('precio')?.touched &&
+         formulario.get('precio')?.invalid) {
+
+      @if (formulario.get('precio')?.errors?.['required']) {
+        <small>El precio es obligatorio</small>
+      }
+
+      @if (formulario.get('precio')?.errors?.['min']) {
+        <small>El precio debe ser mayor o igual a 0</small>
+      }
+
+      @if (formulario.get('precio')?.errors?.['pattern']) {
+        <small>Ingrese un valor numérico con hasta 2 decimales</small>
+      }
+    }
+  </div>
+
+  <div class="campo">
+    <label>Descuento (%)</label>
+
+    <input
+      type="number"
+      step="1"
+      formControlName="descuento"
+      placeholder="Ingrese el descuento">
+
+    @if (formulario.get('descuento')?.touched &&
+         formulario.get('descuento')?.invalid) {
+
+      @if (formulario.get('descuento')?.errors?.['required']) {
+        <small>El descuento es obligatorio</small>
+      }
+
+      @if (formulario.get('descuento')?.errors?.['min']) {
+        <small>El descuento no puede ser negativo</small>
+      }
+
+      @if (formulario.get('descuento')?.errors?.['max']) {
+        <small>El descuento no puede ser mayor a 100%</small>
+      }
+
+      @if (formulario.get('descuento')?.errors?.['pattern']) {
+        <small>El descuento debe ser un número entero</small>
+      }
+    }
+  </div>
+
+  <div class="botones">
+    <button
+      class="btn btn-primary"
+      type="submit"
+      [disabled]="formulario.invalid">
+      Guardar
+    </button>
+
+    <button
+      class="btn btn-secondary"
+      type="button"
+      (click)="cancelar()">
+      Cancelar
+    </button>
+  </div>
+
+</form>
