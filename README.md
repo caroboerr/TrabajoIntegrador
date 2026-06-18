@@ -37,16 +37,16 @@ Como consecuencia, los cambios realizados durante la ejecución de la aplicació
 * Cambio de estado del usuario
 
 #### Captura: Usuarios
-![ScreenShot1](public/Pantalla-Usuarios.png) 
+![ScreenShot2](public/Pantalla-Usuarios.png) 
 
 #### Captura: Usuarios - Alta
-![ScreenShot1](public/Pantalla-UsuarioAlta.png) 
+![ScreenShot3](public/Pantalla-UsuarioAlta.png) 
 
 #### Captura: Usuarios - Detalle
-![ScreenShot1](public/Pantalla-UsuarioDetalle.png) 
+![ScreenShot4](public/Pantalla-UsuarioDetalle.png) 
 
 #### Captura: Usuarios - Cambio de Estado
-![ScreenShot1](public/Pantalla-UsuarioCambioEstado.png) 
+![ScreenShot5](public/Pantalla-UsuarioCambioEstado.png) 
 
 
 ### Gestión de Productos
@@ -58,14 +58,13 @@ Como consecuencia, los cambios realizados durante la ejecución de la aplicació
 * Navegación mediante rutas parametrizadas.
 
 #### Captura: Productos
-![ScreenShot1](public/Pantalla-Productos.png) 
+![ScreenShot6](public/Pantalla-Productos.png) 
 
 #### Captura: Productos - Alta
-![ScreenShot1](public/Pantalla-ProductosAlta.png) 
+![ScreenShot7](public/Pantalla-ProductoAlta.png) 
 
 #### Captura: Productos - Detalle
-![ScreenShot1](public/Pantalla-ProductosDetalle.png) 
-
+![ScreenShot8](public/Pantalla-ProductoDetalle.png) 
 
 ## Aspectos Técnicos
 
