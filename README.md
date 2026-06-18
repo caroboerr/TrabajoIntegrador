@@ -100,7 +100,7 @@ Durante el desarrollo se implementaron las siguientes características de Angula
 ## Despliegue
 
 Se realizó en Vercel
-
+https://trabajo-integrador-teal.vercel.app/
 
 ## Autor
 Carolina Boerr
