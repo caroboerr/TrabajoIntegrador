@@ -40,10 +40,13 @@ Como consecuencia, los cambios realizados durante la ejecución de la aplicació
 ![ScreenShot1](public/Pantalla-Usuarios.png) 
 
 #### Captura: Usuarios - Alta
-![ScreenShot1](public/Pantalla-UsuariosAlta.png) 
+![ScreenShot1](public/Pantalla-UsuarioAlta.png) 
 
 #### Captura: Usuarios - Detalle
-![ScreenShot1](public/Pantalla-UsuariosAlta.png) 
+![ScreenShot1](public/Pantalla-UsuarioDetalle.png) 
+
+#### Captura: Usuarios - Cambio de Estado
+![ScreenShot1](public/Pantalla-UsuarioCambioEstado.png) 
 
 
 ### Gestión de Productos
